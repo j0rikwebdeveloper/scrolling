@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="1.css">
+</head>
+<body>
+	<section>
+		<h2>Scroll to begin</h2>
+	</section>
+	<div class="box">
+		<h2 class="text1 text">Scroll trigger is awesome</h2>
+		<h2 class="text2 text">This is my first scroll</h2>
+		<h2 class="text3 text">How it is?</h2>
+		<img src="https://p4.wallpaperbetter.com/wallpaper/500/442/354/outrun-vaporwave-hd-wallpaper-preview.jpg" class="logo" alt="">
+	</div>
+	<div class="box2">
+		<h2 class="text4">Lorem ipsum dolor sit amet.</h2>
+		<h2 class="text5">This is my first scroll</h2>
+		<h2 class="text6">How it is?</h2>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+	<script type="text/javascript">
+		gsap.timeline({
+			scrollTrigger: {
+				trigger:".box",
+				start : "center center", //Animation  start at this point
+				end: "bottom top",
+				markers:false,
+				scrub: true,
+				pin: true
+			}
+		})
+		.from(".text1", { x : innerWidth * 1 })
+		.from(".text2", { x : innerWidth * -1 })
+		.from(".text3", { x : innerWidth * 1 })
+		.from(".logo", { 
+			y :innerHeight * 1,
+			rotate:360
+		})
+		gsap.timeline({
+			scrollTrigger: {
+				trigger:".box2",
+				start : "center center", //Animation  start at this point
+				end: "bottom top",
+				markers:false,
+				scrub: true,
+				pin: true
+			}
+		})
+		.from(".box2", { opacity:0 })
+		.from(".text4", { y : innerHeight * 1 }) 
+		.from(".text5", { y : innerHeight * 1 })
+		.from(".text6", { y : innerHeight * 1 })
+
+	</script>
+</body>
+</html>
